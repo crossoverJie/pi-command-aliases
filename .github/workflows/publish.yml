@@ -10,7 +10,27 @@ permissions:
   id-token: write
 
 jobs:
+  check_token:
+    runs-on: ubuntu-latest
+    outputs:
+      has_token: ${{ steps.check.outputs.has_token }}
+    steps:
+      - name: Check NPM_TOKEN is configured
+        id: check
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          if [ -n "$NPM_TOKEN" ]; then
+            echo "has_token=true" >> "$GITHUB_OUTPUT"
+            echo "NPM_TOKEN is configured; publish job will run."
+          else
+            echo "has_token=false" >> "$GITHUB_OUTPUT"
+            echo "NPM_TOKEN is not configured; skipping publish." >> "$GITHUB_STEP_SUMMARY"
+          fi
+
   publish:
+    needs: check_token
+    if: needs.check_token.outputs.has_token == 'true'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
