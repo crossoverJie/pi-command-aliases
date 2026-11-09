@@ -7,13 +7,13 @@ Adds `/exit` and `/clear` to [Pi](https://github.com/earendil-works/pi) as alias
 From npm (recommended):
 
 ```sh
-pi install npm:@crossoverjie/pi-command-aliases@1.0.0
+pi install npm:@crossoverjie/pi-command-aliases@1.0.1
 ```
 
 From git:
 
 ```sh
-pi install git:github.com/crossoverJie/pi-command-aliases@v1.0.0
+pi install git:github.com/crossoverJie/pi-command-aliases@v1.0.1
 ```
 
 Try it for one session without changing your settings:
