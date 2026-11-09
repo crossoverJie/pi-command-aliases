@@ -1,0 +1,23 @@
+{
+  "name": "@crossoverjie/pi-command-aliases",
+  "version": "1.0.0",
+  "description": "Add /exit and /clear commands to pi as aliases of /quit and /new",
+  "type": "module",
+  "keywords": ["pi-package"],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/crossoverJie/pi-command-aliases.git"
+  },
+  "bugs": {
+    "url": "https://github.com/crossoverJie/pi-command-aliases/issues"
+  },
+  "homepage": "https://github.com/crossoverJie/pi-command-aliases#readme",
+  "files": ["extensions", "CHANGELOG.md", "README.md", "LICENSE"],
+  "peerDependencies": {
+    "@earendil-works/pi-coding-agent": "*"
+  },
+  "pi": {
+    "extensions": ["./extensions/aliases.ts"]
+  }
+}
